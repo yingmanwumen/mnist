@@ -28,6 +28,7 @@ class Hyperparameters:
         batch_size (int): Number of samples per training batch
         num_epochs (int): Maximum number of training epochs
     """
+
     batch_size: int
     num_epochs: int
 
@@ -47,6 +48,7 @@ class Train(object):
         hyperparameters (Hyperparameters): Training configuration
         model (Model): Neural network model to train
     """
+
     def __init__(self, hyperparameters: Hyperparameters, model: Model):
         """
         Initialize the training environment.
@@ -93,8 +95,8 @@ class Train(object):
         """
         # Initialize early stopping parameters
         best_val_accuracy = 0.0  # Track best validation accuracy
-        epochs_no_improve = 0    # Counter for epochs without improvement
-        patience = 5            # Number of epochs to wait before early stopping
+        epochs_no_improve = 0  # Counter for epochs without improvement
+        patience = 5  # Number of epochs to wait before early stopping
 
         for epoch in range(self.hyperparameters.num_epochs):
             loss, train_metrics = self._epoch()

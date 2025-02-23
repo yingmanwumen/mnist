@@ -28,6 +28,7 @@ class Model(nn.Module):
     Input shape: (batch_size, 1, 28, 28)
     Output shape: (batch_size, 10)
     """
+
     def __init__(self):
         """
         Initialize the model architecture.

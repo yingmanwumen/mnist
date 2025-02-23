@@ -28,6 +28,7 @@ class Reason(object):
         dataset (DataSet): Dataset instance for sampling images
         model (Model): Trained neural network model
     """
+
     def __init__(self, dataset: DataSet, model: Model):
         """
         Initialize the reasoning environment.
@@ -81,7 +82,6 @@ def display(data, output, target):
     # Get the predicted digit (class with highest probability)
     result = output.argmax(1)
     # Convert logits to probabilities using softmax
-    output = torch.nn.functional.softmax(output, dim=1)[0]
     output = torch.nn.functional.softmax(output, dim=1)[0]
     title = f"Target: {target}\n"
     title += f"Result: {result.item()}\n"

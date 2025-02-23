@@ -25,6 +25,7 @@ class DataSet(object):
         root (str, optional): Directory for storing dataset. Defaults to "./data"
         batch_size (int, optional): Size of batches for DataLoaders. Defaults to 10
     """
+
     def __init__(self, root="./data", batch_size=10):
         """
         Initialize the dataset with data augmentation and splitting.
@@ -45,7 +46,9 @@ class DataSet(object):
             [
                 transforms.RandomRotation(degrees=15),  # Rotate images up to 15 degrees
                 transforms.RandomAffine(
-                    degrees=0, translate=(0.2, 0.2), scale=(0.8, 1.2)  # Apply random translation and scaling
+                    degrees=0,
+                    translate=(0.2, 0.2),
+                    scale=(0.8, 1.2),  # Apply random translation and scaling
                 ),
                 transforms.ToTensor(),  # Convert images to PyTorch tensors
             ]
